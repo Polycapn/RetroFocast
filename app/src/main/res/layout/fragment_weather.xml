@@ -1,0 +1,72 @@
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="mu.node.rexweather.app.WeatherActivity$PlaceholderFragment"
+    android:id="@+id/swipe_refresh_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Container needed to force the footer to hug the bottom of the screen -->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true">
+        <!-- Clickable to fix unresponsive SwipeRefreshLayout -->
+
+        <!-- Container enforces relative positioning of header and list of forecasts -->
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/weather_container_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:background="@color/primaryDarkColor">
+
+                <TextView
+                    android:id="@+id/location_name"
+                    style="@style/LocationText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:textColor="@color/white"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:id="@+id/current_temperature"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    style="@style/CurrentTemperatureText"
+                    android:textColor="@color/white"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <!-- Forecasts -->
+            <ListView
+                android:id="@+id/weather_forecast_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:id="@+id/attribution"
+            android:text="@string/attribution"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            style="@style/AttributionText"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
